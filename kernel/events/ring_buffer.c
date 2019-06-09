@@ -287,6 +287,7 @@ void *perf_aux_output_begin(struct perf_output_handle *handle,
 	if (!atomic_read(&rb->aux_mmap_count))
 		goto err_put;
 
+
 	/*
 	 * Nesting is not supported for AUX area, make sure nested
 	 * writers are caught early
@@ -484,6 +485,7 @@ static void __rb_free_aux(struct ring_buffer *rb)
 	 * last rb_free_aux().
 	 */
 	WARN_ON_ONCE(in_atomic());
+
 
 	if (rb->aux_priv) {
 		rb->free_aux(rb->aux_priv);
