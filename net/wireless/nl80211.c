@@ -12420,7 +12420,6 @@ void nl80211_send_connect_result(struct cfg80211_registered_device *rdev,
 	msg = nlmsg_new(100 + cr->req_ie_len + cr->resp_ie_len +
 			cr->fils_kek_len + cr->pmk_len +
 			(cr->pmkid ? WLAN_PMKID_LEN : 0), gfp);
-
 	if (!msg)
 		return;
 
@@ -13812,7 +13811,6 @@ void cfg80211_ft_event(struct net_device *netdev,
 
 	msg = nlmsg_new(100 + ft_event->ies_len + ft_event->ric_ies_len,
 			GFP_KERNEL);
-
 	if (!msg)
 		return;
 

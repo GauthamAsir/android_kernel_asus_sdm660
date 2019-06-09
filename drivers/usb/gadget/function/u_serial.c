@@ -372,7 +372,6 @@ __releases(&port->port_lock)
 __acquires(&port->port_lock)
 */
 {
-
 	struct list_head	*pool;
 	struct usb_ep		*in;
 	int			status = 0;

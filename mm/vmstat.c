@@ -1393,9 +1393,7 @@ static cpumask_var_t cpu_stat_off;
 
 static void vmstat_update(struct work_struct *w)
 {
-
 	if (refresh_cpu_vm_stats(true) && !cpu_isolated(smp_processor_id())) {
-
 		/*
 		 * Counters were updated so we expect more updates
 		 * to occur in the future. Keep on running the
